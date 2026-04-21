@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect } from 'react'
 import '../styles/Contact.css'
 import { FaFacebook, FaLine, FaDiscord } from "react-icons/fa"
 import { langData } from '../Data/Lengdata'
@@ -10,9 +10,17 @@ const Contactcom = () => {
     useEffect(() => {
         const stored = localStorage.getItem("lang")
         if (stored) setLang(stored)
+
+        const handleLang = () => {
+            const stored = localStorage.getItem("lang")
+            if (stored) setLang(stored)
+        }
+
+        window.addEventListener('langChange', handleLang)
+        return () => window.removeEventListener('langChange', handleLang)
     }, [])
 
-    const t = langData[Lang] 
+    const t = langData[Lang]
 
     return (
         <>

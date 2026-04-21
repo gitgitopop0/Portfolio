@@ -18,7 +18,7 @@ const Navbar = () => {
         setLang(value)
         localStorage.setItem('lang', value)
 
-        window.location.reload()
+        window.dispatchEvent(new Event('langChange'))
     }
 
     const getTitle = () => {

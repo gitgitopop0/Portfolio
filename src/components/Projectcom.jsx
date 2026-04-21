@@ -7,10 +7,18 @@ const Projectcom = () => {
 
   const [Lang, setLang] = React.useState("en")
 
-  useEffect(() => {
-    const stored = localStorage.getItem("lang")
-    if (stored) setLang(stored)
-  }, [])
+   useEffect(() => {
+          const stored = localStorage.getItem("lang")
+          if (stored) setLang(stored)
+  
+          const handleLang = () => {
+              const stored = localStorage.getItem("lang")
+              if (stored) setLang(stored)
+          }
+  
+          window.addEventListener('langChange', handleLang)
+          return () => window.removeEventListener('langChange', handleLang)
+      }, [])
 
   const t = langDataItem[Lang]
   return (

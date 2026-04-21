@@ -10,10 +10,18 @@ import { langData } from '../Data/Lengdata'
 const Homecom = () => {
     const [Lang, setLang] = useState("en")
 
-    useEffect(() => {
-        const stored = localStorage.getItem("lang")
-        if (stored) setLang(stored)
-    }, [])
+     useEffect(() => {
+            const stored = localStorage.getItem("lang")
+            if (stored) setLang(stored)
+    
+            const handleLang = () => {
+                const stored = localStorage.getItem("lang")
+                if (stored) setLang(stored)
+            }
+    
+            window.addEventListener('langChange', handleLang)
+            return () => window.removeEventListener('langChange', handleLang)
+        }, [])
 
     const t = langData[Lang]
     return (
