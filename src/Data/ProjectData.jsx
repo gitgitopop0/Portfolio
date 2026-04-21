@@ -6,6 +6,6 @@ export const projectData = [
         title: "Web Cafe Project",
         desc: "",
         img: cafeProject,
-        url: "https://cafe-fronend-git-main-buraphas-projects-9e8b659d.vercel.app/"
+        url: "https://cafe-fronend.vercel.app/"
     }
 ]
