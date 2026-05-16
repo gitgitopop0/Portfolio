@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/Project.css'
 import { projectData } from '../Data/ProjectData'
-import { langDataItem } from '../Data/Lengdata'
 
 const Projectcom = () => {
 
   const [Lang, setLang] = React.useState("en")
 
-   useEffect(() => {
-          const stored = localStorage.getItem("lang")
-          if (stored) setLang(stored)
-  
-          const handleLang = () => {
-              const stored = localStorage.getItem("lang")
-              if (stored) setLang(stored)
-          }
-  
-          window.addEventListener('langChange', handleLang)
-          return () => window.removeEventListener('langChange', handleLang)
-      }, [])
+  useEffect(() => {
+    const stored = localStorage.getItem("lang")
+    if (stored) setLang(stored)
 
-  const t = langDataItem[Lang]
+    const handleLang = () => {
+      const stored = localStorage.getItem("lang")
+      if (stored) setLang(stored)
+    }
+
+    window.addEventListener('langChange', handleLang)
+    return () => window.removeEventListener('langChange', handleLang)
+  }, [])
+
   return (
     <>
       <div className="mainProject">
@@ -34,7 +32,7 @@ const Projectcom = () => {
                 </div>
                 <div className="cardcontent">
                   <p className="cardtitle">{item.title}</p>
-                  <p className="cardsub">{t.desc}</p>
+                  <p className="carddesc">{item.desc}</p>
                 </div>
               </a>
             ))}

@@ -21,12 +21,3 @@ export const langData = {
     contact: "สนใจจ้างงาน พูดคุยโปรเจค หรือติดต่อเรื่องงานพัฒนาเว็บ สามารถติดต่อผมได้ผ่านช่องทางเหล่านี้ครับ",
   }
 };
-
-export const langDataItem = {
-  en: {
-    desc: "Full-stack cafe website with React frontend and FastAPI backend. Includes menu & category management, featured menu highlights, admin dashboard with user management, and an interactive store map. Authentication with role-based access control."
-  },
-  th:{
-    desc: "เว็บไซต์ร้านกาแฟ Full-stack สร้างด้วย React และ FastAPI มีฟีเจอร์แสดงเมนูและหมวดหมู่ เมนูแนะนำ แดชบอร์ดสำหรับแอดมิน ระบบจัดการผู้ใช้ และแผนที่ร้าน รองรับการล็อกอินพร้อมกำหนดสิทธิ์การเข้าถึงตามบทบาท"
-  }
-}
